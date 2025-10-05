@@ -25,5 +25,5 @@ apptable = False
 with open(APPDATA, 'r') as f:
     apptable = json.load(f)
     
-if not apptable["VersionNumber"] == GetVersion():
+if not apptable["VersionNumber"] == GetVersion() and apptable["UpdatesOn"] == True:
     Update()
