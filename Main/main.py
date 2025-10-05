@@ -1,6 +1,7 @@
 import os
 import json
 from functions.version import GetVersion
+from functions.updater import Update
 
 HOMEDIR = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HOMEDIR, "data")
@@ -25,4 +26,4 @@ with open(APPDATA, 'r') as f:
     apptable = json.load(f)
     
 if not apptable["VersionNumber"] == GetVersion():
-    
+    Update()
